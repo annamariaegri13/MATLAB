@@ -1,0 +1,33 @@
+function grafice(R,C,A,F,N)
+
+figure('Name','Semnal de intrare si iesire',... 
+       'Units','normalized',...
+       'Position',[0.1 0.09 0.8 0.83],...
+       'NumberTitle','off'); 
+set(gcf, 'Color','#4DBEEE');
+
+w=logspace(1,5,50);
+w=1./(R.*C);
+f=1./(2.*pi.*R.*C);
+T=1/f; 
+t=0:T/100:N*T;
+Vi=A.*sin(2.*pi.*F.*t);   
+x=1i.*w.*C;
+y=R+1i.*w.*C;
+z=x./y;
+Vo=z.*Vi;
+
+%semnal
+close all;
+
+R=1e+3;
+C=2e-06;
+F=100;
+A=7;
+N=4;
+
+
+grafice(R,C,tip,p,fig);
+
+
+interfata(R,C,tip,p,fig);
